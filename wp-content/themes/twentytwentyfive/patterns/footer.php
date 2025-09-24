@@ -90,9 +90,15 @@
 		</div>
 
 
-		<!-- Custom Footer -->
+
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+</div>
+
+<!-- Custom Footer -->
 		<!-- wp:group {"tagName":"footer","align":"full","className":"bg-dark text-white pt-4","layout":{"inherit":true}} -->
-		<section id="footer" class="bg-success text-white py-5">
+		<section id="footer" class="bg-success text-white py-5 container-fluid">
 			<div class="container">
 				<div class="row justify-content-center text-center text-sm-start mb-4">
 					<!-- Column 1 -->
@@ -198,11 +204,4 @@
 				</div>
 			</div>
 		</section>
-
-
-
-		<!-- /wp:group -->
-	</div>
-	<!-- /wp:group -->
-</div>
 <!-- /wp:group -->
