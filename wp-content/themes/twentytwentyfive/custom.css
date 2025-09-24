@@ -1,12 +1,17 @@
-#social-icons ul li a i{
+#footer ul.social li a {
     transition: transform 0.3s ease;
 }
 
-#social-icons ul li a i:hover {
-    transform: scale(1.3);
+#footer ul.social li a:hover {
+    transform: scale(1.2);
+}
+
+#footer ul.quick-links {
+    display: block !important;
 }
 
 #footer ul.quick-links li {
+    display: block;
     padding: 3px 0;
     transition: margin-left 0.3s ease, font-weight 0.3s ease;
 }
@@ -14,6 +19,10 @@
 #footer ul.quick-links li:hover {
     margin-left: 5px;
     font-weight: 700;
+}
+
+#footer ul.quick-links.is-responsive {
+    flex-direction: column !important;
 }
 
 @media (max-width: 767px) {
