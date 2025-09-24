@@ -8,6 +8,16 @@
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
+
+function mytheme_register_menus() {
+    register_nav_menus(array(
+        'footer-1' => __('Footer Column 1'),
+        'footer-2' => __('Footer Column 2'),
+        'footer-3' => __('Footer Column 3'),
+    ));
+}
+add_action('init', 'mytheme_register_menus');
+
 function add_bootstrap()
 {
 	wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');

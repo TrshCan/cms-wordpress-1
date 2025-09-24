@@ -1,3 +1,18 @@
+/* Make footer links white with no underline */
+.quick-links a {
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease, margin-left 0.3s ease;
+}
+
+/* Hover effect */
+.quick-links a:hover {
+    color: #f8f9fa; /* slightly lighter white */
+    margin-left: 5px;
+    font-weight: 700;
+}
+
+
 #footer ul.social li a {
     transition: transform 0.3s ease;
 }

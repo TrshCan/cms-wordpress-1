@@ -98,94 +98,43 @@
 					<!-- Column 1 -->
 					<div class="col-12 col-sm-3 mb-3">
 						<h5 class="border-start border-3 ps-2">Quick links</h5>
-						<!-- wp:navigation {"className":"list-unstyled quick-links"} -->
-						<ul class="list-unstyled quick-links">
-							<!-- wp:navigation-link {"label":"Home","url":"https://example.com/home","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/home" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> Home</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"About","url":"http://localhost/wordpress/about-us/","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/about" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> About</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"FAQ","url":"https://example.com/faq","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/faq" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> FAQ</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"Get Started","url":"http://localhost/wordpress/sample-page/","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/get-started" class="text-white"
-									style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Get
-									Started</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"Videos","url":"https://example.com/videos","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/videos" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> Videos</a></li>
-							<!-- /wp:navigation-link -->
-						</ul>
-						<!-- /wp:navigation -->
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'footer-1',
+							'container' => false,
+							'menu_class' => 'list-unstyled quick-links text-white',
+							'link_before' => '<i class="fa fa-angle-double-right"></i> ',
+						));
+						?>
 					</div>
 
 					<!-- Column 2 -->
 					<div class="col-12 col-sm-3 mb-3">
-						<h5 class="border-start border-3 ps-2">Posts</h5>
-						<!-- wp:navigation {"className":"list-unstyled quick-links"} -->
-						<ul class="list-unstyled quick-links">
-							<!-- wp:navigation-link {"label":"Home","url":"https://example.com/home","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/home" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> Home</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"About","url":"https://example.com/about","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/about" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> About</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"FAQ","url":"https://example.com/faq","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/faq" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> FAQ</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"Get Started","url":"https://example.com/get-started","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/get-started" class="text-white"
-									style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Get
-									Started</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"Videos","url":"https://example.com/videos","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/videos" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> Videos</a></li>
-							<!-- /wp:navigation-link -->
-						</ul>
-						<!-- /wp:navigation -->
+						<h5 class="border-start border-3 ps-2">Quick links</h5>
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'footer-2',
+							'container' => false,
+							'menu_class' => 'list-unstyled quick-links',
+							'link_before' => '<i class="fa fa-angle-double-right"></i> ',
+						));
+						?>
 					</div>
 
 					<!-- Column 3 -->
 					<div class="col-12 col-sm-3 mb-3">
-						<h5 class="border-start border-3 ps-2">Others</h5>
-						<!-- wp:navigation {"className":"list-unstyled quick-links text-white"} -->
-						<ul class="list-unstyled quick-links text-white">
-							<!-- wp:navigation-link {"label":"Home","url":"https://example.com/home","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/home" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> Home</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"About","url":"https://example.com/about","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/about" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> About</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"FAQ","url":"https://example.com/faq","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/faq" class="text-white" style="text-decoration: none"><i
-										class="fa fa-angle-double-right"></i> FAQ</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"Get Started","url":"https://example.com/get-started","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/get-started" class="text-white"
-									style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Get
-									Started</a></li>
-							<!-- /wp:navigation-link -->
-							<!-- wp:navigation-link {"label":"Imprint","url":"https://example.com/imprint","className":"text-white","style":{"text-decoration":"none"}} -->
-							<li><a href="https://example.com/imprint" class="text-white"
-									style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Imprint</a>
-							</li>
-							<!-- /wp:navigation-link -->
-						</ul>
-						<!-- /wp:navigation -->
+						<h5 class="border-start border-3 ps-2">Quick links</h5>
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'footer-3',
+							'container' => false,
+							'menu_class' => 'list-unstyled quick-links',
+							'link_before' => '<i class="fa fa-angle-double-right"></i> ',
+						));
+						?>
 					</div>
 				</div>
+
 
 
 				<div class="bg-success text-white pt-4 pb-3 w-100">
