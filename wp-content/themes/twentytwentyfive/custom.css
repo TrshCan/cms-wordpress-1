@@ -1,0 +1,26 @@
+#social-icons ul li a i{
+    transition: transform 0.3s ease;
+}
+
+#social-icons ul li a i:hover {
+    transform: scale(1.3);
+}
+
+#footer ul.quick-links li {
+    padding: 3px 0;
+    transition: margin-left 0.3s ease, font-weight 0.3s ease;
+}
+
+#footer ul.quick-links li:hover {
+    margin-left: 5px;
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    #footer h5 {
+        padding-left: 0;
+        border-left: transparent;
+        padding-bottom: 0;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+composer install
+
+php artisan config:clear
+php artisan config:cache
+
+php artisan route:clear
+php artisan route:cache
+
+exec apache2-foreground
