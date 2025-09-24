@@ -98,37 +98,88 @@
 					<!-- Column 1 -->
 					<div class="col-12 col-sm-3 mb-3">
 						<h5 class="border-start border-3 ps-2">Quick links</h5>
+						<!-- wp:navigation {"className":"list-unstyled quick-links"} -->
 						<ul class="list-unstyled quick-links">
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Home</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> About</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Get Started</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Videos</a></li>
+							<!-- wp:navigation-link {"label":"Home","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Home</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"About","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> About</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"FAQ","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> FAQ</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"Get Started","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Get Started</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"Videos","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Videos</a></li>
+							<!-- /wp:navigation-link -->
 						</ul>
+						<!-- /wp:navigation -->
 					</div>
 
 					<!-- Column 2 -->
 					<div class="col-12 col-sm-3 mb-3">
 						<h5 class="border-start border-3 ps-2">Quick links</h5>
+						<!-- wp:navigation {"className":"list-unstyled quick-links"} -->
 						<ul class="list-unstyled quick-links">
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Home</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> About</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Get Started</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Videos</a></li>
+							<!-- wp:navigation-link {"label":"Home","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Home</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"About","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> About</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"FAQ","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> FAQ</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"Get Started","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Get Started</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"Videos","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Videos</a></li>
+							<!-- /wp:navigation-link -->
 						</ul>
+						<!-- /wp:navigation -->
 					</div>
 
 					<!-- Column 3 -->
 					<div class="col-12 col-sm-3 mb-3">
 						<h5 class="border-start border-3 ps-2">Quick links</h5>
+						<!-- wp:navigation {"className":"list-unstyled quick-links text-white"} -->
 						<ul class="list-unstyled quick-links text-white">
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Home</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> About</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Get Started</a></li>
-							<li><a href="#" class="text-white" style="text-decoration: none"><i class="fa fa-angle-double-right"></i> Imprint</a></li>
+							<!-- wp:navigation-link {"label":"Home","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Home</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"About","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> About</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"FAQ","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> FAQ</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"Get Started","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Get Started</a></li>
+							<!-- /wp:navigation-link -->
+							<!-- wp:navigation-link {"label":"Imprint","url":"#","className":"text-white","style":{"text-decoration":"none"}} -->
+							<li><a href="#" class="text-white" style="text-decoration: none"><i
+										class="fa fa-angle-double-right"></i> Imprint</a></li>
+							<!-- /wp:navigation-link -->
 						</ul>
+						<!-- /wp:navigation -->
 					</div>
 				</div>
 
@@ -137,7 +188,7 @@
 					<div class="container-fluid"> <!-- full width -->
 
 						<!-- Social Icons -->
-						<div class="row">
+						<div class="row" id="social-icons">
 							<div class="col-12 mt-3">
 								<ul class="list-inline d-flex justify-content-center mb-3">
 									<li class="list-inline-item mx-2">
