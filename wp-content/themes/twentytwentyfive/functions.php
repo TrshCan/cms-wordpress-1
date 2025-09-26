@@ -8,6 +8,58 @@
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
+function my_footer_widget_areas() {
+    
+    // Footer Column 1 Widget Area
+    register_sidebar( array(
+        'name'          => __( 'Footer Column 1 (Navigate)', 'text_domain' ),
+        'id'            => 'footer-col-1',
+        'description'   => __( 'Add Navigation Menu widgets here.', 'text_domain' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">', // Keeps your widget wrapper
+        'after_widget'  => '</div>',
+        // Use your h5 styling for the widget title
+        'before_title'  => '<h5 class="border-start border-3 ps-2">', 
+        'after_title'   => '</h5>',
+    ) );
+    
+    // Footer Column 2 Widget Area
+    register_sidebar( array(
+        'name'          => __( 'Footer Column 2 (Posts)', 'text_domain' ),
+        'id'            => 'footer-col-2',
+        'description'   => __( 'Add Navigation Menu widgets here.', 'text_domain' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5 class="border-start border-3 ps-2">',
+        'after_title'   => '</h5>',
+    ) );
+    
+    // Footer Column 3 Widget Area
+    register_sidebar( array(
+        'name'          => __( 'Footer Column 3 (Categories)', 'text_domain' ),
+        'id'            => 'footer-col-3',
+        'description'   => __( 'Add Navigation Menu widgets here.', 'text_domain' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5 class="border-start border-3 ps-2">',
+        'after_title'   => '</h5>',
+    ) );
+}
+add_action( 'widgets_init', 'my_footer_widget_areas' );
+
+add_filter('wp_trim_excerpt', function($text) {
+    $max_length = 100;
+    if (strlen($text) > $max_length) {
+        $text = substr($text, 0, $max_length);
+        $text = substr($text, 0, strrpos($text, ' ')) . '...';
+    }
+    return $text;
+});
+
+function ttfive_child_enqueue_styles() {
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+}
+add_action('wp_enqueue_scripts', 'ttfive_child_enqueue_styles');
+
 
 function mytheme_register_menus() {
     register_nav_menus(array(

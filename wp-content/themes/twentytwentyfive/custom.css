@@ -45,3 +45,103 @@
         margin-bottom: 10px;
     }
 }
+.wp-block-post-terms a{
+    text-decoration: none !important;
+    color: #292929 !important;
+}
+.wp-block-post-title a {
+    color: #292929 !important;
+}
+.customM time {
+    color: gray !important;
+}
+.post-card {
+    border-radius: 0% !important;
+    max-height: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.post-col-left {
+  flex: 0 0 40%;
+}
+
+.post-col-right {
+  flex: 1;
+}
+
+.date-box .day {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.date-box .date-info {
+  font-size: 0.9rem;
+  color: gray;
+  text-transform: uppercase;
+}
+
+/* Bigger date number */
+.wp-block-post-date {
+    color: #0d6efd !important;
+}
+
+.wp-block-post-date .customMonth{
+    color: gray !important;
+}
+.post-date-big {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Border only right + bottom */
+.border-custom {
+    border-right: 2px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
+    border-left: none !important;
+    border-top: none !important;
+}
+
+/* Limit card height & add shadow */
+.post-card {     /* adjust as you like */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    overflow: hidden;
+}
+
+/* Featured image: proportional resize */
+.post-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Image zoom on hover */
+.post-card:hover img {
+    transform: scale(1.2);
+}
+.wp-block-post-terms a {
+    font-weight: lighter;
+    color: gray;
+}
+.post-card:hover .wp-block-post-title a {
+    color: #0d6efd !important;
+    text-decoration: none !important;
+}
+
+.post-card:hover {
+    cursor: pointer;
+}
+.img-container {
+    height: 200px;       /* match card height */
+    overflow: hidden;    /* prevent overflow */
+}

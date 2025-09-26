@@ -103,7 +103,7 @@
 				<div class="row justify-content-center text-center text-sm-start mb-4">
 					<!-- Column 1 -->
 					<div class="col-12 col-sm-3 mb-3">
-						<h5 class="border-start border-3 ps-2">Quick links</h5>
+						<h5 class="border-start border-3 ps-2">Navigate</h5>
 						<?php
 						wp_nav_menu(array(
 							'theme_location' => 'footer-1',
@@ -116,7 +116,7 @@
 
 					<!-- Column 2 -->
 					<div class="col-12 col-sm-3 mb-3">
-						<h5 class="border-start border-3 ps-2">Quick links</h5>
+						<h5 class="border-start border-3 ps-2">Posts</h5>
 						<?php
 						wp_nav_menu(array(
 							'theme_location' => 'footer-2',
@@ -129,7 +129,7 @@
 
 					<!-- Column 3 -->
 					<div class="col-12 col-sm-3 mb-3">
-						<h5 class="border-start border-3 ps-2">Quick links</h5>
+						<h5 class="border-start border-3 ps-2">Categories</h5>
 						<?php
 						wp_nav_menu(array(
 							'theme_location' => 'footer-3',
