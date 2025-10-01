@@ -148,37 +148,20 @@
 
 						<!-- Social Icons -->
 						<div class="row" id="social-icons">
-							<div class="col-12 mt-3">
-								<ul class="list-inline d-flex justify-content-center mb-3">
-									<li class="list-inline-item mx-2">
-										<a href="https://www.fiverr.com/share/qb8D02" class="text-white fs-4">
-											<i class="fa fa-facebook"></i>
-										</a>
-									</li>
-									<li class="list-inline-item mx-2">
-										<a href="https://www.fiverr.com/share/qb8D02" class="text-white fs-4">
-											<i class="fa fa-twitter"></i>
-										</a>
-									</li>
-									<li class="list-inline-item mx-2">
-										<a href="https://www.fiverr.com/share/qb8D02" class="text-white fs-4">
-											<i class="fa fa-instagram"></i>
-										</a>
-									</li>
-									<li class="list-inline-item mx-2">
-										<a href="https://www.fiverr.com/share/qb8D02" class="text-white fs-4">
-											<i class="fa fa-google-plus"></i>
-										</a>
-									</li>
-									<li class="list-inline-item mx-2">
-										<a href="https://www.fiverr.com/share/qb8D02" target="_blank"
-											class="text-white fs-4">
-											<i class="fa fa-envelope"></i>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+    <div class="col-12 mt-3">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'social-menu', // The new menu location
+            'container'      => false,         // Don't wrap the menu in a div/container
+            'menu_class'     => 'list-inline d-flex justify-content-center mb-3', // Use the existing UL classes
+            'depth'          => 1,             // Only display top-level items
+            'link_before'    => '<span class="text-white fs-4">', // Start the link wrapper
+            'link_after'     => '</span>',     // End the link wrapper
+            'fallback_cb'    => false,         // Do not display a fallback menu
+        ));
+        ?>
+    </div>
+</div>
 
 						<!-- Info Text -->
 						<div class="row">

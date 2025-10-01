@@ -26,9 +26,10 @@ add_action('wp_enqueue_scripts', 'ttfive_child_enqueue_styles');
 
 function mytheme_register_menus() {
     register_nav_menus(array(
-        'footer-1' => __('Footer Column 1'),
-        'footer-2' => __('Footer Column 2'),
-        'footer-3' => __('Footer Column 3'),
+        'footer-1'      => __('Footer Column 1'),
+        'footer-2'      => __('Footer Column 2'),
+        'footer-3'      => __('Footer Column 3'),
+        'social-menu'   => __('Social Media Icons'), // <-- ADD THIS LINE
     ));
 }
 add_action('init', 'mytheme_register_menus');

@@ -2,10 +2,10 @@
 /* Target the social icon links for the hover effect */
 #social-icons a:hover {
     /* Scale the icon up by 1.2 times (20% bigger) */
-    transform: scale(1.2);
+    transform: scale(1.4);
     
     /* Add a smooth transition effect */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 /* Add a smooth transition to the default state for consistency */
@@ -13,6 +13,9 @@
     transition: transform 0.3s ease-in-out;
     /* Important: Set the display to 'inline-block' so transform works correctly */
     display: inline-block; 
+}
+#menu-social-links li {
+    margin-left: 15px;
 }
 
 /* Quick links styles */
