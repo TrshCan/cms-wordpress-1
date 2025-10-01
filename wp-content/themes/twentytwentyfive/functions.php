@@ -8,46 +8,9 @@
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
-function my_footer_widget_areas() {
-    
-    // Footer Column 1 Widget Area
-    register_sidebar( array(
-        'name'          => __( 'Footer Column 1 (Navigate)', 'text_domain' ),
-        'id'            => 'footer-col-1',
-        'description'   => __( 'Add Navigation Menu widgets here.', 'text_domain' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">', // Keeps your widget wrapper
-        'after_widget'  => '</div>',
-        // Use your h5 styling for the widget title
-        'before_title'  => '<h5 class="border-start border-3 ps-2">', 
-        'after_title'   => '</h5>',
-    ) );
-    
-    // Footer Column 2 Widget Area
-    register_sidebar( array(
-        'name'          => __( 'Footer Column 2 (Posts)', 'text_domain' ),
-        'id'            => 'footer-col-2',
-        'description'   => __( 'Add Navigation Menu widgets here.', 'text_domain' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h5 class="border-start border-3 ps-2">',
-        'after_title'   => '</h5>',
-    ) );
-    
-    // Footer Column 3 Widget Area
-    register_sidebar( array(
-        'name'          => __( 'Footer Column 3 (Categories)', 'text_domain' ),
-        'id'            => 'footer-col-3',
-        'description'   => __( 'Add Navigation Menu widgets here.', 'text_domain' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h5 class="border-start border-3 ps-2">',
-        'after_title'   => '</h5>',
-    ) );
-}
-add_action( 'widgets_init', 'my_footer_widget_areas' );
 
 add_filter('wp_trim_excerpt', function($text) {
-    $max_length = 100;
+    $max_length = 200;
     if (strlen($text) > $max_length) {
         $text = substr($text, 0, $max_length);
         $text = substr($text, 0, strrpos($text, ' ')) . '...';
@@ -69,6 +32,28 @@ function mytheme_register_menus() {
     ));
 }
 add_action('init', 'mytheme_register_menus');
+
+
+function my_theme_enqueue_dosis_font() {
+    // 1. Define the URL for the Dosis font
+    // This example requests weights 400 (Regular) and 700 (Bold)
+    $fonts_url = 'https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap';
+
+    // 2. Register the stylesheet
+    wp_register_style( 
+        'my-dosis-font',    // A unique name for your stylesheet
+        $fonts_url,         // The Dosis URL
+        array(),            // Dependencies
+        null                // Version number
+    );
+
+    // 3. Enqueue (load) the stylesheet on the front-end
+    wp_enqueue_style( 'my-dosis-font' );
+}
+
+// 4. Hook the function into the WordPress initialization action
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_dosis_font' );
+
 
 function add_bootstrap()
 {

@@ -1,13 +1,18 @@
 /* Social icons styles */
-#footer ul.social li a {
-    color: #fff !important;
-    transition: transform 0.3s ease, color 0.3s ease;
+/* Target the social icon links for the hover effect */
+#social-icons a:hover {
+    /* Scale the icon up by 1.2 times (20% bigger) */
+    transform: scale(1.2);
+    
+    /* Add a smooth transition effect */
+    transition: transform 0.3s ease-in-out;
 }
 
-#footer ul.social li a:hover {
-    transform: scale(1.2);
-	font-weight: 700;
-    color: #f8f9fa !important; /* Slightly lighter white on hover */
+/* Add a smooth transition to the default state for consistency */
+#social-icons a {
+    transition: transform 0.3s ease-in-out;
+    /* Important: Set the display to 'inline-block' so transform works correctly */
+    display: inline-block; 
 }
 
 /* Quick links styles */
@@ -27,7 +32,7 @@
 }
 
 #footer ul.quick-links li a:hover {
-    color: #f8f9fa !important; /* Slightly lighter white on hover */
+    color: #f8f9fa !important;
     margin-left: 5px;
     font-weight: 700;
 }
@@ -36,7 +41,7 @@
     flex-direction: column !important;
 }
 
-/* Media query for small screens */
+
 @media (max-width: 767px) {
     #footer h5 {
         padding-left: 0;
@@ -45,103 +50,81 @@
         margin-bottom: 10px;
     }
 }
-.wp-block-post-terms a{
-    text-decoration: none !important;
-    color: #292929 !important;
+
+/* Custom posts css */
+.wp-post-custom {
+    font-family: 'Dosis', sans-serif;
+    max-height: 200px;
+    border: 1px solid rgba(106, 106, 106, 0.175);
+    box-shadow: 
+        /* Heavy Bottom Shadow: (0 H, 10 V, 15 Blur, -5 Spread, 70% opacity black) */
+        0px 10px 15px -5px rgba(0, 0, 0, 0.2), 
+        
+        /* Light Left Shadow: (-5 H, 0 V, 5 Blur, -2 Spread, 20% opacity black) */
+        -5px 0px 5px -2px rgba(0, 0, 0, 0.05), 
+        
+        /* Light Right Shadow: (5 H, 0 V, 5 Blur, -2 Spread, 20% opacity black) */
+        5px 0px 5px -2px rgba(0, 0, 0, 0.05);
+}
+.wp-post-custom:hover{
+    cursor: pointer;
+}
+.wp-post-custom:hover .wp-featured-img-custom{
+    transform: scale(1.2); 
+}
+.wp-post-custom:hover .wp-block-post-title a{
+    color: rgb(61, 61, 136) !important;
+}
+.wp-featured-img-block-custom{
+    max-height: 200px;
+    overflow: hidden !important; 
+}
+.wp-featured-img-block-custom .wp-featured-img-custom {
+    aspect-ratio: auto !important;
+    transition: transform 0.5s ease;
+    object-fit: cover;
 }
 .wp-block-post-title a {
     color: #292929 !important;
-}
-.customM time {
-    color: gray !important;
-}
-.post-card {
-    border-radius: 0% !important;
-    max-height: 200px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.post-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.post-col-left {
-  flex: 0 0 40%;
-}
-
-.post-col-right {
-  flex: 1;
-}
-
-.date-box .day {
-  font-size: 2.5rem;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.date-box .date-info {
-  font-size: 0.9rem;
-  color: gray;
-  text-transform: uppercase;
-}
-
-/* Bigger date number */
-.wp-block-post-date {
-    color: #0d6efd !important;
-}
-
-.wp-block-post-date .customMonth{
-    color: gray !important;
-}
-.post-date-big {
-    font-size: 2.5rem;
     font-weight: bold;
-    line-height: 1;
 }
 
-/* Border only right + bottom */
-.border-custom {
-    border-right: 2px solid #dee2e6;
-    border-bottom: 2px solid #dee2e6;
-    border-left: none !important;
-    border-top: none !important;
+.wp-block-post-title a:hover {
+    text-decoration: none;
 }
 
-/* Limit card height & add shadow */
-.post-card {     /* adjust as you like */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    overflow: hidden;
-}
-
-/* Featured image: proportional resize */
-.post-card img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-/* Image zoom on hover */
-.post-card:hover img {
-    transform: scale(1.2);
-}
 .wp-block-post-terms a {
-    font-weight: lighter;
-    color: gray;
-}
-.post-card:hover .wp-block-post-title a {
-    color: #0d6efd !important;
-    text-decoration: none !important;
+    color: #292929 !important;
+    text-decoration: none;
 }
 
-.post-card:hover {
-    cursor: pointer;
+.wp-block-post-terms a:hover {
+    text-decoration: none;
 }
-.img-container {
-    height: 200px;       /* match card height */
-    overflow: hidden;    /* prevent overflow */
+.date-day a {
+    font-weight: bold;
+}
+.date-day a,
+.date-year a{
+    color: #0d6efd !important;
+}
+.wp-date-month a {
+    color: black;
+}
+.wp-block-post-date a:hover {
+    text-decoration: none;
+}
+
+.wp-block-date-custom {
+    border: 1px solid rgba(106, 106, 106, 0.175);
+    border-top: none;
+    border-left: none;
+}
+
+.wp-categories-custom a {
+    font-weight: lighter;
+}
+
+.wp-categories-row-custom p {
+    font-weight: bold;
 }
