@@ -8,6 +8,21 @@
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
+function mytheme_enqueue_custom_scripts() {
+    // Register & enqueue your JS file
+    wp_enqueue_script(
+        'mytheme-custom-js',
+        get_template_directory_uri() . '/custom.js',
+        array('jquery'), // dependencies (optional)
+        '1.0',
+        true // load in footer
+    );
+}
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_custom_scripts');
+
+
+add_theme_support('block-templates');
+add_theme_support('block-template-parts');
 
 add_filter('wp_trim_excerpt', function($text) {
     $max_length = 200;
@@ -63,17 +78,22 @@ function add_bootstrap()
 }
 add_action('wp_enqueue_scripts', 'add_bootstrap');
 
-function mytheme_enqueue_assets()
-{
-	// Enqueue Font Awesome
-	wp_enqueue_style(
-		'font-awesome',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-		array(),
-		'4.7.0'
-	);
+function mytheme_enqueue_assets() {
+    wp_enqueue_style(
+        'font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
+        array(),
+        '6.4.2'
+    );
+    wp_enqueue_style(
+        'font-awesome-v4-shims',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/v4-shims.min.css',
+        array('font-awesome'),
+        '6.4.2'
+    );
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');
+
 
 // Adds theme support for post formats.
 if (!function_exists('twentytwentyfive_post_format_setup')):
