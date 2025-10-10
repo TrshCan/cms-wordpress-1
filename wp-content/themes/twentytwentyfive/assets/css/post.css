@@ -1,7 +1,8 @@
 
 
 /* Custom posts css */
-.wp-post-custom {
+.wp-post-custom, 
+.post-custom {
     font-family: 'Dosis', sans-serif;
     max-height: 200px;
     border: 1px solid rgba(106, 106, 106, 0.175);
@@ -15,20 +16,24 @@
         /* Light Right Shadow: (5 H, 0 V, 5 Blur, -2 Spread, 20% opacity black) */
         5px 0px 5px -2px rgba(0, 0, 0, 0.05);
 }
-.wp-post-custom:hover{
+.wp-post-custom:hover,
+.post-custom:hover{
     cursor: pointer;
 }
-.wp-post-custom:hover .wp-featured-img-custom{
+.wp-post-custom:hover .wp-featured-img-custom,
+.post-custom:hover .wp-featured-img-custom{
     transform: scale(1.2); 
 }
-.wp-post-custom:hover .wp-block-post-title a{
+.wp-post-custom:hover .wp-block-post-title a,
+.post-custom:hover .wp-block-post-title a{
     color: rgb(61, 61, 136) !important;
 }
 .wp-featured-img-block-custom{
     max-height: 200px;
     overflow: hidden !important; 
 }
-.wp-featured-img-block-custom .wp-featured-img-custom {
+.wp-featured-img-block-custom .wp-featured-img-custom
+ {
     aspect-ratio: auto !important;
     transition: transform 0.5s ease;
     object-fit: cover;
@@ -38,7 +43,8 @@
     font-weight: bold;
 }
 
-.wp-block-post-title a:hover {
+.wp-block-post-title a:hover,
+.post-custom .wp-block-post-title a:hover {
     text-decoration: none;
 }
 
