@@ -1,0 +1,133 @@
+
+
+/* Search result */
+.search-container {
+    background-color: aquamarine;
+    margin-top: 0% !important;
+}
+
+.result-title {
+    padding-top: 20px !important;
+}
+
+.wp-block-query-title .highlight {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+/* === Custom Search Bar Styling === */
+.search-bar_search-result .wp-block-search {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 800px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.search-bar_search-result .wp-block-search__inside-wrapper {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 8px 16px;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar_search-result .wp-block-search__inside-wrapper:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Input field */
+.search-bar_search-result .wp-block-search__input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  font-size: 1.1rem;
+  padding: 10px 14px;
+  width: 100%;
+}
+
+.search-bar_search-result.wp-block-search__input:focus {
+  outline: none;
+}
+
+/* Button */
+.search-bar_search-result .wp-block-search__button {
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745 !important; /* Bootstrap green */
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px !important;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar_search-result .wp-block-search__button:hover {
+  background-color: #218838;
+}
+
+/* Add search icon before the input (optional, Font Awesome required) */
+.search-bar_search-result .wp-block-search__inside-wrapper::before {
+  content: "\f002"; /* fa-search */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #555;
+  font-size: 1.3rem;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.search {
+    background-color: #f5efe0 !important;
+}
+
+.search header{
+    background-color: #ffffff !important;
+}
+
+.no-result-custom,
+.search-result-custom {
+    background-color: white !important;
+}
+.search .wp-block-group {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.no-result-container {
+    background-color: white; 
+    position: relative; 
+    z-index: 10;
+    width: 100vw; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px 0;
+    margin-top: 0px !important;
+}
+
+/* Optional: Center the text content inside the full-width container */
+.no-result-container p {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.search-result-custom {
+    color: orangered !important;
+    max-width: 100vw !important;
+    z-index: -1;
+}
+
+.querry-loop-custom-search {
+    margin-top: 0px !important;
+}
+
+.post-custom {
+    background-color: white !important;
+}

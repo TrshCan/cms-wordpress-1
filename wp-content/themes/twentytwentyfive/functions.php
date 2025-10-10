@@ -129,30 +129,62 @@ add_action('after_setup_theme', 'twentytwentyfive_editor_style');
 
 // Enqueues style.css on the front.
 if (!function_exists('twentytwentyfive_enqueue_styles')):
-	/**
-	 * Enqueues style.css on the front.
-	 *
-	 * @since Twenty Twenty-Five 1.0
-	 *
-	 * @return void
-	 */
-	function twentytwentyfive_enqueue_styles()
-	{
-		wp_enqueue_style(
-			'twentytwentyfive-style',
-			get_parent_theme_file_uri('style.css'),
-			array(),
-			wp_get_theme()->get('Version')
-		);
+    /**
+     * Enqueues style.css and custom stylesheets on the front.
+     *
+     * @since Twenty Twenty-Five 1.0
+     *
+     * @return void
+     */
+    function twentytwentyfive_enqueue_styles()
+    {
+        // 1. Enqueue the main theme style.css
+        wp_enqueue_style(
+            'twentytwentyfive-style',
+            get_parent_theme_file_uri('style.css'),
+            array(),
+            wp_get_theme()->get('Version')
+        );
 
-		// Load custom CSS AFTER everything
-		wp_enqueue_style(
-			'my-custom-style',
-			get_stylesheet_directory_uri() . '/custom.css',
-			array('twentytwentyfive-style'), // load after theme css
-			filemtime(get_stylesheet_directory() . '/custom.css')
-		);
-	}
+        // Define the dependency array for all custom styles
+        $deps = array('twentytwentyfive-style'); 
+        $style_dir_uri = get_stylesheet_directory_uri();
+        $style_dir = get_stylesheet_directory();
+
+        // 2. Enqueue custom styles individually
+
+        // a. Post-related styles
+        wp_enqueue_style(
+            'my-custom-post-style',
+            $style_dir_uri . '/assets/css/post.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/post.css')
+        );
+
+        // b. Header styles
+        wp_enqueue_style(
+            'my-custom-header-style',
+            $style_dir_uri . '/assets/css/header.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/header.css')
+        );
+
+        // c. Footer styles
+        wp_enqueue_style(
+            'my-custom-footer-style',
+            $style_dir_uri . '/assets/css/footer.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/footer.css')
+        );
+
+        // d. Search styles
+        wp_enqueue_style(
+            'my-custom-search-style',
+            $style_dir_uri . '/assets/css/search.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/search.css')
+        );
+    }
 
 endif;
 add_action('wp_enqueue_scripts', 'twentytwentyfive_enqueue_styles');

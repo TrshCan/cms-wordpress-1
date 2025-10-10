@@ -234,7 +234,8 @@
 }
 
 .wp-block-query-title .highlight {
-  color: red;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
 }
 
 /* === Custom Search Bar Styling === */
@@ -306,11 +307,15 @@
   margin-left: 5px;
 }
 
-.wp-site-blocks {
+.search main {
     background-color: #f5efe0 !important;
 }
 
 .no-result-custom,
 .search-result-custom {
     background-color: white !important;
+}
+
+.search-result-custom {
+    color: orangered !important;
 }

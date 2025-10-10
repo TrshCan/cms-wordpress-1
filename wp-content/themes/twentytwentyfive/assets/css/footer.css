@@ -1,0 +1,56 @@
+/* Social icons styles */
+/* Target the social icon links for the hover effect */
+#social-icons a:hover {
+    /* Scale the icon up by 1.2 times (20% bigger) */
+    transform: scale(1.4);
+    
+    /* Add a smooth transition effect */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Add a smooth transition to the default state for consistency */
+#social-icons a {
+    transition: transform 0.3s ease-in-out;
+    /* Important: Set the display to 'inline-block' so transform works correctly */
+    display: inline-block; 
+}
+#menu-social-links li {
+    margin-left: 15px;
+}
+
+/* Quick links styles */
+#footer ul.quick-links {
+    display: block !important;
+}
+
+#footer ul.quick-links li {
+    display: block;
+    padding: 3px 0;
+}
+
+#footer ul.quick-links li a {
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease, margin-left 0.3s ease, font-weight 0.3s ease;
+}
+
+#footer ul.quick-links li a:hover {
+    color: #f8f9fa !important;
+    margin-left: 5px;
+    font-weight: 700;
+}
+
+#footer ul.quick-links.is-responsive {
+    flex-direction: column !important;
+}
+
+
+@media (max-width: 767px) {
+    #footer h5 {
+        padding-left: 0;
+        border-left: transparent;
+        padding-bottom: 0;
+        margin-bottom: 10px;
+    }
+}
+
