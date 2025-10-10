@@ -1,0 +1,52 @@
+/* Ensure this is in your post.css file */
+
+.custom-post-datetime {
+    position: relative; /* Essential for positioning the ::before */
+    display: inline-flex; /* Use flexbox to center content vertically/horizontally */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    
+    /* Define the size of your circle (adjust as needed) */
+    width: 60px; /* Example width for the circle */
+    height: 60px; /* Example height for the circle (should match width for perfect circle) */
+    
+    background-color: rgb(251, 194, 88); /* The orange circle background */
+    border-radius: 50%; /* Makes it a circle */
+    
+    /* Styles for the text inside the circle (adjust font size/color as needed) */
+    color: white; /* Example: text color white to contrast with orange */
+    font-size: 14px; /* Example font size */
+    line-height: 1.2; /* Adjust line-height for better vertical spacing of text */
+    text-align: center; /* Center multi-line text */
+    margin: 0; 
+}
+
+/* 1. Target the date block */
+.post-detail-custom-date {
+    position: relative; /* Crucial for positioning the ::after element */
+    /* Add space below the date element to fit the HR */
+    padding-bottom: 5px; /* Adjust this value to set the distance of the line below the date */
+}
+
+/* 2. Create the horizontal line using the ::after pseudo-element */
+.post-detail-custom-date::after {
+    content: ''; /* Required for pseudo-elements */
+    display: block;
+    position: absolute;
+    
+    /* Position the line to the bottom center of the date element */
+    bottom: 0; /* Align it to the bottom of the date element */
+    left: 50%; /* Start the line's left edge at the center */
+    transform: translateX(-50%); /* Shift the line back by half its width to center it */
+    
+    /* Line styling */
+    width: 80%; /* Width of the line, relative to the parent date element */
+    height: 1px; /* Thickness of the line */
+    background-color: #333; /* Color of the line (e.g., dark gray) */
+}
+
+/* Optional: Ensure the outer container allows space for the date/month blocks */
+/* This is primarily for visual layout if the date/month blocks are too close */
+.wp-block-group.is-vertical {
+    gap: 0; /* Ensure no extra gap is pushing the date/month apart if you want them tight */
+}

@@ -184,6 +184,13 @@ if (!function_exists('twentytwentyfive_enqueue_styles')):
             $deps,
             filemtime($style_dir . '/assets/css/search.css')
         );
+
+		wp_enqueue_style(
+            'my-custom-postdetail-style',
+            $style_dir_uri . '/assets/css/post-detail.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/post-detail.css')
+        );
     }
 
 endif;
