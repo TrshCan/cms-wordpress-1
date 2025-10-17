@@ -253,6 +253,10 @@
   background-color: #0056b3;
 }
 
+.wp-block-comment-template {
+  block-spacing: 0 !important;
+}
+
 
 .custom-latest-posts {
   color: white !important ;
