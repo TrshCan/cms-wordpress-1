@@ -191,6 +191,13 @@ if (!function_exists('twentytwentyfive_enqueue_styles')):
             $deps,
             filemtime($style_dir . '/assets/css/post-detail.css')
         );
+
+		wp_enqueue_style(
+            'my-custom-categories-style',
+            $style_dir_uri . '/assets/css/categories.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/categories.css')
+        );
     }
 
 endif;

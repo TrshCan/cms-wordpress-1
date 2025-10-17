@@ -20,4 +20,10 @@ document.addEventListener("DOMContentLoaded", function() {
     } 
     // If no quotes are found, it leaves the title as it is.
   }
+
+  const textarea = document.querySelector("#comment");
+    textarea.placeholder = "What are you thinking............";
 });
+
+
+
