@@ -8,6 +8,8 @@
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
+
+
 function mytheme_enqueue_custom_scripts() {
     // Register & enqueue your JS file
     wp_enqueue_script(
@@ -197,6 +199,13 @@ if (!function_exists('twentytwentyfive_enqueue_styles')):
             $style_dir_uri . '/assets/css/categories.css',
             $deps,
             filemtime($style_dir . '/assets/css/categories.css')
+        );
+
+        wp_enqueue_style(
+            'my-custom-archives-style',
+            $style_dir_uri . '/assets/css/archives.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/archives.css')
         );
     }
 

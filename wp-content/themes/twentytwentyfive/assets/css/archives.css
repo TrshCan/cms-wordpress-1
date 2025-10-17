@@ -1,0 +1,41 @@
+/* Example: Make archives block look like a dropdown with custom styles */
+.wp-block-archives {
+  list-style: none;
+  padding: 0;
+}
+.wp-block-archives li {
+  margin: 6px 0;
+}
+.wp-block-archives a {
+  color: #00b4ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.wp-block-archives a:hover {
+  color: #0077cc;
+}
+
+/* Target only your custom post list */
+.custom-archive-posts li {
+  counter-increment: post-counter;
+  list-style: none;
+  position: relative;
+}
+.custom-archive-posts li {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+
+.custom-archive-posts {
+  counter-reset: post-counter;
+}
+
+/* Add the number before each post title */
+.custom-archive-posts .wp-block-post-title::before {
+  content: counter(post-counter) ". ";
+  font-weight: 700;
+  color: #0073aa; /* WordPress blue */
+  margin-right: 8px;
+}
