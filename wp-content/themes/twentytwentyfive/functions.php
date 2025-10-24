@@ -10,6 +10,55 @@
  */
 
 
+function latest_news_block_shortcode($atts) {
+    $atts = shortcode_atts([
+        'count' => 8,
+    ], $atts, 'latest_news_block');
+
+    // Get latest 8 posts
+    $posts = get_posts([
+        'numberposts' => intval($atts['count']),
+        'post_status' => 'publish',
+    ]);
+
+    if (empty($posts)) return '<p>No recent posts.</p>';
+
+    // Split into 2 columns
+    $col1 = array_slice($posts, 0, 4);
+    $col2 = array_slice($posts, 4, 4);
+
+    ob_start(); ?>
+    <div class="latest-news-block">
+        <h3 class="lnb-heading">Xem nhiều</h3>
+        <div class="lnb-columns">
+            <div class="lnb-column">
+                <?php foreach ($col1 as $i => $post): ?>
+                    <div class="lnb-item">
+                        <div class="lnb-num"><?php echo $i + 1; ?></div>
+                        <a href="<?php echo get_permalink($post); ?>" class="lnb-title">
+                            <?php echo esc_html(get_the_title($post)); ?>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="lnb-column">
+                <?php foreach ($col2 as $i => $post): ?>
+                    <div class="lnb-item">
+                        <div class="lnb-num"><?php echo $i + 5; ?></div>
+                        <a href="<?php echo get_permalink($post); ?>" class="lnb-title">
+                            <?php echo esc_html(get_the_title($post)); ?>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('latest_news_block', 'latest_news_block_shortcode');
+
+
 /**
  * Shortcode: [my_post_comments count="3"]
  * Works inside Query Loop — shows each post’s comments + nested replies.
