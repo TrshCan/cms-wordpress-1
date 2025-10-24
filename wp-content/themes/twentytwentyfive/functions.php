@@ -9,44 +9,93 @@
  * @since Twenty Twenty-Five 1.0
  */
 
-// In your functions.php or a custom plugin file
-function my_post_comments_shortcode($atts, $content = null, $tag = '')
-{
+
+/**
+ * Shortcode: [my_post_comments count="3"]
+ * Works inside Query Loop — shows each post’s comments + nested replies.
+ */
+function my_post_comments_shortcode($atts) {
     global $post, $block;
 
-    // Try to get the post ID from the block context (works inside Query Loop)
-    $post_id = null;
-    if (isset($block) && isset($block->context['postId'])) {
-        $post_id = $block->context['postId'];
-    }
+    $atts = shortcode_atts(['count' => 5], $atts, 'my_post_comments');
 
-    // Fallback to the global post ID
-    if (!$post_id && isset($post->ID)) {
-        $post_id = $post->ID;
-    }
+    $post_id = $block->context['postId'] ?? $post->ID ?? null;
+    if (!$post_id) return '';
 
-    if (!$post_id)
-        return '<p>No post found.</p>';
-
-    // Get approved comments for that post
     $comments = get_comments([
         'post_id' => $post_id,
-        'status' => 'approve',
-        'order' => 'ASC',
+        'status'  => 'approve',
+        'order'   => 'ASC',
     ]);
 
-    if (empty($comments))
-        return '<p>No comments yet.</p>';
+    if (empty($comments)) return '<p>No comments yet.</p>';
 
-    $output = '<ul class="post-comments">';
-    foreach ($comments as $comment) {
-        $output .= '<li><strong>' . esc_html($comment->comment_author) . ':</strong> ' . esc_html($comment->comment_content) . '</li>';
+    // 1) build node map
+    $nodes = [];
+    foreach ($comments as $c) {
+        $nodes[ (int)$c->comment_ID ] = [
+            'comment' => $c,
+            'children' => []
+        ];
     }
-    $output .= '</ul>';
 
-    return $output;
+    // 2) attach children to parents when parent exists in map
+    foreach ($nodes as $id => $node) {
+        $parent_id = (int)$node['comment']->comment_parent;
+        if ($parent_id && isset($nodes[$parent_id])) {
+            $nodes[$parent_id]['children'][] = &$nodes[$id];
+        }
+    }
+    unset($node, $id); // clean reference
+
+    // 3) collect top-level roots (parent missing or parent not in fetched set)
+    $roots = [];
+    foreach ($nodes as $id => $node) {
+        $parent_id = (int)$node['comment']->comment_parent;
+        if (!$parent_id || !isset($nodes[$parent_id])) {
+            $roots[] = &$nodes[$id];
+        }
+    }
+
+    // recursive renderer that accepts node structure (comment + children)
+    $render_node = function($node, $depth = 0) use (&$render_node) {
+        $comment = $node['comment'];
+        $author = esc_html(get_comment_author($comment));
+        $avatar = get_avatar($comment, 48, '', '', ['class' => 'my-comment-avatar-img']);
+        $content = wp_kses_post($comment->comment_content); // allow basic HTML if present
+
+        ob_start(); ?>
+        <div class="my-comment-row" data-depth="<?php echo (int)$depth; ?>">
+            <div class="my-comment-avatar"><?php echo $avatar; ?></div>
+            <div class="my-comment-bubble">
+                <div class="my-comment-author"><?php echo $author; ?></div>
+                <div class="my-comment-text"><?php echo $content; ?></div>
+            </div>
+        </div>
+        <?php
+        if (!empty($node['children'])): ?>
+            <div class="my-comment-replies">
+                <?php foreach ($node['children'] as $childNode) {
+                    echo $render_node($childNode, $depth + 1);
+                } ?>
+            </div>
+        <?php endif;
+
+        return ob_get_clean();
+    };
+
+    ob_start();
+    echo '<div class="my-comments-block">';
+    foreach ($roots as $root) {
+        echo $render_node($root, 0);
+    }
+    echo '</div>';
+
+    return ob_get_clean();
 }
 add_shortcode('my_post_comments', 'my_post_comments_shortcode');
+
+
 
 
 /* Shortcode: [latest_comments count="3" title="Latest Comments"] */
