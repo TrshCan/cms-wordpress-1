@@ -279,7 +279,6 @@ color: white !important ;
 .read-more{
   background-color: rgba(0, 255, 255, 0.501) !important;
   text-align: center !important;
-  min-width: 100vw !important;
   padding: 20px 10px !important;
 }
 
