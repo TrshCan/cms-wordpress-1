@@ -1,70 +1,67 @@
-/* Target only your custom post list */
-.custom-archive-posts li {
-  counter-increment: post-counter;
-  list-style: none;
-  position: relative;
-}
-.custom-archive-posts li {
-  display: flex;
-  align-items: flex-start;
-  gap: 4px;
+.latest-news-block {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: #111;
+  max-width: 800px;
 }
 
-.custom-archive-posts {
-  counter-reset: post-counter;
+.lnb-heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.lnb-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+.lnb-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.lnb-item {
+  display: flex;
+  align-items: center;
   gap: 10px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 60px 14px;
+  height: 64px;
+  box-sizing: border-box;
 }
 
-/* Add the number before each post title */
-.custom-archive-posts h2.wp-block-post-title::before {
-  content: counter(post-counter) ". ";
+.lnb-num {
+  font-size: 22px;
   font-weight: 700;
-  color: #0073aa;
-  margin-right: 8px;
-  font-size: 24px !important; /* Increased number size */
+  color: #000;
+  width: 30px;
+  flex-shrink: 0;
 }
 
-.custom-archives {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.lnb-title {
+  flex: 1;
+  font-size: 15px;
+  color: #222;
+  text-decoration: none;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* ← increase to 3 or even 4 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.custom-archives h2 {
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    color: #333;
-    margin-bottom: 20px;
+
+.lnb-title:hover {
+  color: #c00;
 }
 
-.custom-archive-posts li {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.custom-archive-posts li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.wp-block-post-title a {
-    font-size: 18px;
-    color: #0073aa;
-    text-decoration: none;
-}
-
-.wp-block-post-title a:hover {
-    color: #00a0d2;
-    text-decoration: underline;
-}
-
-.wp-block-spacer {
-    display: none;
+/* Responsive */
+@media (max-width: 640px) {
+  .lnb-columns {
+    grid-template-columns: 1fr;
+  }
 }
