@@ -1,0 +1,85 @@
+
+
+/* Custom posts css */
+.wp-post-custom, 
+.post-custom {
+    font-family: 'Dosis', sans-serif;
+    max-height: 200px;
+    border: 1px solid rgba(106, 106, 106, 0.175);
+    box-shadow: 
+        /* Heavy Bottom Shadow: (0 H, 10 V, 15 Blur, -5 Spread, 70% opacity black) */
+        0px 10px 15px -5px rgba(0, 0, 0, 0.2), 
+        
+        /* Light Left Shadow: (-5 H, 0 V, 5 Blur, -2 Spread, 20% opacity black) */
+        -5px 0px 5px -2px rgba(0, 0, 0, 0.05), 
+        
+        /* Light Right Shadow: (5 H, 0 V, 5 Blur, -2 Spread, 20% opacity black) */
+        5px 0px 5px -2px rgba(0, 0, 0, 0.05);
+}
+.wp-post-custom:hover,
+.post-custom:hover{
+    cursor: pointer;
+}
+.wp-post-custom:hover .wp-featured-img-custom,
+.post-custom:hover .wp-featured-img-custom{
+    transform: scale(1.2); 
+}
+.wp-post-custom:hover .wp-block-post-title a,
+.post-custom:hover .wp-block-post-title a{
+    color: rgb(61, 61, 136) !important;
+}
+.wp-featured-img-block-custom{
+    max-height: 200px;
+    overflow: hidden !important; 
+}
+.wp-featured-img-block-custom .wp-featured-img-custom
+ {
+    aspect-ratio: auto !important;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+.wp-block-post-title a {
+    color: #292929 !important;
+    font-weight: bold;
+}
+
+.wp-block-post-title a:hover,
+.post-custom .wp-block-post-title a:hover {
+    text-decoration: none;
+}
+
+.wp-block-post-terms a {
+    color: #292929 !important;
+    text-decoration: none;
+}
+
+.wp-block-post-terms a:hover {
+    text-decoration: none;
+}
+.date-day a {
+    font-weight: bold;
+}
+.date-day a,
+.date-year a{
+    color: #0d6efd !important;
+}
+.wp-date-month a {
+    color: black;
+}
+.wp-block-post-date a:hover {
+    text-decoration: none;
+}
+
+.wp-block-date-custom {
+    border: 1px solid rgba(106, 106, 106, 0.175);
+    border-top: none;
+    border-left: none;
+}
+
+.wp-categories-custom a {
+    font-weight: lighter;
+}
+
+.wp-categories-row-custom p {
+    font-weight: bold;
+}

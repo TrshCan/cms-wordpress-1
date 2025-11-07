@@ -1,0 +1,77 @@
+/* Categories list wrapper */
+.wp-block-categories-list {
+  background-color: #ffffff;
+  list-style: none;
+  padding: 20px;
+  max-width: 300px;
+  margin-top: 90px;
+  position: relative;
+  border-top: 20px solid transparent; /* Base for striped effect */
+  /* 2. Set the striped gradient as the border's image source */
+  border-image-source: repeating-linear-gradient(
+    -15deg,       /* The rotation angle */
+    #ffffff,     /* First color */
+    #ffffff 0.5px,
+    #000000 0.5px, /* Second color */
+    #000000 1px
+  );
+
+  /* 3. Tell the browser to use the full gradient for the border */
+  border-image-slice: 1;
+  background-position: top;
+}
+
+/* Add "Categories" title using pseudo-element */
+.wp-block-categories-list::before {
+  content: "Categories";
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  z-index: 1; /* Ensure title is above the striped border */
+}
+
+/* Individual category item */
+.cat-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e3e3e3; /* Solid bottom border for each item */
+}
+
+/* Last item removes bottom border to avoid extra line */
+.cat-item:last-child {
+  border-bottom: none;
+}
+
+/* Category link styling */
+.cat-item a {
+  color: cyan; /* Cyan text color */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  padding-left: 20px; /* Space for the yellow dot */
+}
+
+/* Hover effect for category links */
+.cat-item a:hover {
+  color: #00b7eb; /* Slightly darker cyan for hover */
+}
+
+/* Yellow dot before each category */
+.cat-item a::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ffd900; /* Yellow dot */
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

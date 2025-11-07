@@ -1,0 +1,90 @@
+/* Header */
+
+.search-bar .wp-block-search__input,
+.search-bar .wp-block-search__button {
+    border-radius: 3px !important;
+    border: #292929 1px solid !important;
+}
+
+.search-icon-2 .search-icon{
+    background-color: rgba(220, 220, 220, 0.293) !important;
+    border: none !important;
+}
+
+.wp-block-search__button {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin-left: 5px !important;
+    padding: 0px 10px !important;
+}
+
+.home-nav:hover {
+    background-color: gray !important;
+}
+
+.home-nav:hover a{
+    text-decoration: none !important;
+}
+
+.row-custom {
+    gap: 20px !important;
+}
+
+.margin {
+    margin: 0 10px !important;
+}
+
+.header-custom {
+    background-color: rgba(220, 220, 220, 0.293) !important;
+}
+
+.header-custom-1 {
+    padding: 0 40px !important;
+}
+
+.account-nav {
+    transform: translateY(18px);
+}
+
+.avatar-custom {
+    transform: translateY(-15px) translateX(475px);
+}
+
+.wp-block-navigation__submenu-containe {
+    position: absolute !important;
+}
+.nav-search a {
+  display: flex !important;
+  flex-direction: column !important; /* Stack vertically */
+  align-items: center !important;    /* Center horizontally */
+  text-decoration: none !important;
+}
+
+.nav-search a::before {
+  font-family: "Font Awesome 6 Free";   
+  font-size: 20px !important;
+  font-weight: 900; /* solid icons use 900; regular = 400 */
+  content: "\f002"; /* search icon code */
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+  top: 1px;
+}
+
+.nav-menu a {
+  display: flex !important;
+  flex-direction: column !important; /* Stack vertically */
+  align-items: center !important;    /* Center horizontally */
+  text-decoration: none !important;
+}
+
+.nav-menu a::before {
+  font-family: "Font Awesome 6 Free";   
+  font-size: 20px !important;
+  font-weight: 900; /* solid icons use 900; regular = 400 */
+  content: "\f141"; /* search icon code */
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+  top: 1px;
+}

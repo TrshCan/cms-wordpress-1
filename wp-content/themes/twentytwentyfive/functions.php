@@ -8,6 +8,21 @@
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
+function mytheme_enqueue_custom_scripts() {
+    // Register & enqueue your JS file
+    wp_enqueue_script(
+        'mytheme-custom-js',
+        get_template_directory_uri() . '/custom.js',
+        array('jquery'), // dependencies (optional)
+        '1.0',
+        true // load in footer
+    );
+}
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_custom_scripts');
+
+
+add_theme_support('block-templates');
+add_theme_support('block-template-parts');
 
 add_filter('wp_trim_excerpt', function($text) {
     $max_length = 200;
@@ -63,17 +78,22 @@ function add_bootstrap()
 }
 add_action('wp_enqueue_scripts', 'add_bootstrap');
 
-function mytheme_enqueue_assets()
-{
-	// Enqueue Font Awesome
-	wp_enqueue_style(
-		'font-awesome',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-		array(),
-		'4.7.0'
-	);
+function mytheme_enqueue_assets() {
+    wp_enqueue_style(
+        'font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
+        array(),
+        '6.4.2'
+    );
+    wp_enqueue_style(
+        'font-awesome-v4-shims',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/v4-shims.min.css',
+        array('font-awesome'),
+        '6.4.2'
+    );
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');
+
 
 // Adds theme support for post formats.
 if (!function_exists('twentytwentyfive_post_format_setup')):
@@ -109,30 +129,76 @@ add_action('after_setup_theme', 'twentytwentyfive_editor_style');
 
 // Enqueues style.css on the front.
 if (!function_exists('twentytwentyfive_enqueue_styles')):
-	/**
-	 * Enqueues style.css on the front.
-	 *
-	 * @since Twenty Twenty-Five 1.0
-	 *
-	 * @return void
-	 */
-	function twentytwentyfive_enqueue_styles()
-	{
-		wp_enqueue_style(
-			'twentytwentyfive-style',
-			get_parent_theme_file_uri('style.css'),
-			array(),
-			wp_get_theme()->get('Version')
-		);
+    /**
+     * Enqueues style.css and custom stylesheets on the front.
+     *
+     * @since Twenty Twenty-Five 1.0
+     *
+     * @return void
+     */
+    function twentytwentyfive_enqueue_styles()
+    {
+        // 1. Enqueue the main theme style.css
+        wp_enqueue_style(
+            'twentytwentyfive-style',
+            get_parent_theme_file_uri('style.css'),
+            array(),
+            wp_get_theme()->get('Version')
+        );
 
-		// Load custom CSS AFTER everything
+        // Define the dependency array for all custom styles
+        $deps = array('twentytwentyfive-style'); 
+        $style_dir_uri = get_stylesheet_directory_uri();
+        $style_dir = get_stylesheet_directory();
+
+        // 2. Enqueue custom styles individually
+
+        // a. Post-related styles
+        wp_enqueue_style(
+            'my-custom-post-style',
+            $style_dir_uri . '/assets/css/post.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/post.css')
+        );
+
+        // b. Header styles
+        wp_enqueue_style(
+            'my-custom-header-style',
+            $style_dir_uri . '/assets/css/header.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/header.css')
+        );
+
+        // c. Footer styles
+        wp_enqueue_style(
+            'my-custom-footer-style',
+            $style_dir_uri . '/assets/css/footer.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/footer.css')
+        );
+
+        // d. Search styles
+        wp_enqueue_style(
+            'my-custom-search-style',
+            $style_dir_uri . '/assets/css/search.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/search.css')
+        );
+
 		wp_enqueue_style(
-			'my-custom-style',
-			get_stylesheet_directory_uri() . '/custom.css',
-			array('twentytwentyfive-style'), // load after theme css
-			filemtime(get_stylesheet_directory() . '/custom.css')
-		);
-	}
+            'my-custom-postdetail-style',
+            $style_dir_uri . '/assets/css/post-detail.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/post-detail.css')
+        );
+
+		wp_enqueue_style(
+            'my-custom-categories-style',
+            $style_dir_uri . '/assets/css/categories.css',
+            $deps,
+            filemtime($style_dir . '/assets/css/categories.css')
+        );
+    }
 
 endif;
 add_action('wp_enqueue_scripts', 'twentytwentyfive_enqueue_styles');

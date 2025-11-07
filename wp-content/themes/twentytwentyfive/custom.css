@@ -131,3 +131,191 @@
 .wp-categories-row-custom p {
     font-weight: bold;
 }
+
+/* Header */
+
+.search-bar .wp-block-search__input,
+.search-bar .wp-block-search__button {
+    border-radius: 3px !important;
+    border: #292929 1px solid !important;
+}
+
+.search-icon-2 .search-icon{
+    background-color: rgba(220, 220, 220, 0.293) !important;
+    border: none !important;
+}
+
+.wp-block-search__button {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin-left: 5px !important;
+    padding: 0px 10px !important;
+}
+
+.home-nav:hover {
+    background-color: gray !important;
+}
+
+.home-nav:hover a{
+    text-decoration: none !important;
+}
+
+.row-custom {
+    gap: 20px !important;
+}
+
+.margin {
+    margin: 0 10px !important;
+}
+
+.header-custom {
+    background-color: rgba(220, 220, 220, 0.293) !important;
+}
+
+.header-custom-1 {
+    padding: 0 40px !important;
+}
+
+.account-nav {
+    transform: translateY(18px);
+}
+
+.avatar-custom {
+    transform: translateY(-15px) translateX(475px);
+}
+
+.wp-block-navigation__submenu-containe {
+    position: absolute !important;
+}
+.nav-search a {
+  display: flex !important;
+  flex-direction: column !important; /* Stack vertically */
+  align-items: center !important;    /* Center horizontally */
+  text-decoration: none !important;
+}
+
+.nav-search a::before {
+  font-family: "Font Awesome 6 Free";   
+  font-size: 20px !important;
+  font-weight: 900; /* solid icons use 900; regular = 400 */
+  content: "\f002"; /* search icon code */
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+  top: 1px;
+}
+
+.nav-menu a {
+  display: flex !important;
+  flex-direction: column !important; /* Stack vertically */
+  align-items: center !important;    /* Center horizontally */
+  text-decoration: none !important;
+}
+
+.nav-menu a::before {
+  font-family: "Font Awesome 6 Free";   
+  font-size: 20px !important;
+  font-weight: 900; /* solid icons use 900; regular = 400 */
+  content: "\f141"; /* search icon code */
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+  top: 1px;
+}
+
+/* Search result */
+.search-container {
+    background-color: aquamarine;
+    margin-top: 0% !important;
+}
+
+.result-title {
+    padding-top: 20px !important;
+}
+
+.wp-block-query-title .highlight {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+/* === Custom Search Bar Styling === */
+.search-bar_search-result .wp-block-search {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 800px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.search-bar_search-result .wp-block-search__inside-wrapper {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 8px 16px;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar_search-result .wp-block-search__inside-wrapper:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Input field */
+.search-bar_search-result .wp-block-search__input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  font-size: 1.1rem;
+  padding: 10px 14px;
+  width: 100%;
+}
+
+.search-bar_search-result.wp-block-search__input:focus {
+  outline: none;
+}
+
+/* Button */
+.search-bar_search-result .wp-block-search__button {
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745 !important; /* Bootstrap green */
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px !important;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar_search-result .wp-block-search__button:hover {
+  background-color: #218838;
+}
+
+/* Add search icon before the input (optional, Font Awesome required) */
+.search-bar_search-result .wp-block-search__inside-wrapper::before {
+  content: "\f002"; /* fa-search */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #555;
+  font-size: 1.3rem;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.search main {
+    background-color: #f5efe0 !important;
+}
+
+.no-result-custom,
+.search-result-custom {
+    background-color: white !important;
+}
+
+.search-result-custom {
+    color: orangered !important;
+}

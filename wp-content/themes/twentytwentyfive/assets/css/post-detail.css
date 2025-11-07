@@ -1,0 +1,280 @@
+/* Ensure this is in your post.css file */
+/* THE GODDAMN CIRCLE CODE */
+.custom-post-datetime {
+    /* 1. Define Fixed Size & Shape */
+    aspect-ratio: 1 / 1; /* CRITICAL: Enforces a 1:1 width-to-height ratio */
+    border-radius: 50%; /* Makes it a circle */
+    background-color: rgb(255, 217, 0);
+
+    /* 2. Lock Flex Behavior */
+    flex-shrink: 0; /* CRITICAL: Prevents shrinking when space is tight */
+    flex-grow: 0;   /* Prevents growing when space is ample */
+
+    /* 3. Center Content (Date/Month/Year) */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    
+    /* 4. Text Styles */
+    font-weight: bold !important;
+    line-height: 1.2;
+    box-sizing: border-box; 
+    overflow: hidden; /* Clips content if it's still too long */
+    
+    /* 5. Positioning */
+    position: relative;
+    margin: 0;
+}
+
+/* 1. Target the date block */
+.post-detail-custom-date {
+    position: relative; /* Crucial for positioning the ::after element */
+    /* Add space below the date element to fit the HR */
+    padding-bottom: 5px; /* Adjust this value to set the distance of the line below the date */
+}
+
+/* 2. Create the horizontal line using the ::after pseudo-element */
+.post-detail-custom-date::after {
+    content: ''; /* Required for pseudo-elements */
+    display: block;
+    position: absolute;
+    
+    /* Position the line to the bottom center of the date element */
+    bottom: 0; /* Align it to the bottom of the date element */
+    left: 50%; /* Start the line's left edge at the center */
+    transform: translateX(-50%); /* Shift the line back by half its width to center it */
+    
+    /* Line styling */
+    width: 80%; /* Width of the line, relative to the parent date element */
+    height: 1px; /* Thickness of the line */
+    background-color: #333; /* Color of the line (e.g., dark gray) */
+}
+
+/* Optional: Ensure the outer container allows space for the date/month blocks */
+/* This is primarily for visual layout if the date/month blocks are too close */
+.wp-block-group.is-vertical {
+    gap: 0; /* Ensure no extra gap is pushing the date/month apart if you want them tight */
+}
+
+.wp-block-post-navigation-link a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+
+/* === Comment Form Custom Styling (to match "Make a Post" card) === */
+/* === Login Fields (Name, Email, Website, Cookies) === */
+#commentform p.comment-form-author,
+#commentform p.comment-form-email,
+#commentform p.comment-form-url,
+#commentform p.comment-form-cookies-consent {
+  background-color: white !important;
+  padding: 0 20px 15px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide redundant "label" style borders and match layout */
+#commentform p.comment-form-author label,
+#commentform p.comment-form-email label,
+#commentform p.comment-form-url label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* Input field styling — matches textarea */
+#commentform input[type="text"],
+#commentform input[type="email"],
+#commentform input[type="url"] {
+  width: 100%;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fafafa;
+  transition: border-color 0.3s, background-color 0.3s;
+  box-sizing: border-box;
+}
+
+#commentform input[type="text"]:focus,
+#commentform input[type="email"]:focus,
+#commentform input[type="url"]:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+}
+
+/* === Cookies Consent Section === */
+#commentform p.comment-form-cookies-consent {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+  padding: 10px 20px 20px;
+}
+
+#commentform p.comment-form-cookies-consent input[type="checkbox"] {
+  margin-top: 4px;
+  accent-color: #007bff;
+  transform: scale(1.1);
+}
+
+#commentform p.comment-form-cookies-consent label {
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Space before submit button */
+#commentform .form-submit {
+  border-top: 1px solid #eee;
+}
+
+/* Wrap the whole reply section like a card */
+.comment-respond {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 1px solid #e3e3e3;
+}
+
+/* Header ("Make a Post" title) */
+.wp-block-post-comments-form {
+    background-color: rgba(128, 128, 128, 0.093) !important;
+    padding: 0;
+}
+.comment-reply-title {
+  margin: 0;
+  padding: 12px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Optional: change the title text */
+#commentform::before {
+  width: fit-content;
+  content: "Make a Post";
+  display: block;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-radius: 5px 5px 0 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  margin-left: 20px;
+  margin-top: 30px;
+  color: #333;
+}
+
+#reply-title {
+  display: none; /* Hide "Leave a Reply" / cancel link */
+}
+
+/* Body area (form) */
+#commentform {
+  padding: 0;
+  margin: 0;
+}
+
+/* "Logged in as" */
+#commentform .logged-in-as {
+  display: none !important;
+}
+
+/* Comment textarea group */
+#commentform .comment-form-comment {
+  padding: 20px;
+  background-color: white !important;
+  margin: 0;
+}
+
+/* Hide label and use placeholder style */
+#commentform .comment-form-comment label {
+  display: none;
+}
+
+/* Textarea style */
+#commentform textarea#comment {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  height: 100px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fafafa;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+#commentform textarea#comment:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Submit button section */
+#commentform .form-submit {
+  text-align: right;
+  padding: 10px 20px 20px;
+  background-color: white !important;
+  margin: 0;
+}
+
+#commentform #submit {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-right: 20px !important;
+  margin-bottom: 30px;
+}
+
+#commentform #submit:hover {
+  background-color: #0056b3;
+}
+
+.custom-latest-posts {
+  color: white !important ;
+  background-color: rgba(0, 120, 120, 0.679) !important;
+}
+.custom-latest-posts h2 {
+  padding-top: 20px !important;
+}
+
+.custom-latest-posts time {
+  color: white !important ;
+}
+
+.custom-latest-posts .post-detail-custom-date::after {
+    background-color: #ffffff; /* Color of the line (e.g., dark gray) */
+}
+.custom-latest-posts .wp-block-post-title a{ 
+color: white !important ;
+}
+
+.more-post {
+  color: white !important;
+  background-color: cyan !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
