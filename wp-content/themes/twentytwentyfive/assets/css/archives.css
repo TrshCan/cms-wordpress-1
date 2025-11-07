@@ -1,0 +1,70 @@
+/* Target only your custom post list */
+.custom-archive-posts li {
+  counter-increment: post-counter;
+  list-style: none;
+  position: relative;
+}
+.custom-archive-posts li {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.custom-archive-posts {
+  counter-reset: post-counter;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Add the number before each post title */
+.custom-archive-posts h2.wp-block-post-title::before {
+  content: counter(post-counter) ". ";
+  font-weight: 700;
+  color: #0073aa;
+  margin-right: 8px;
+  font-size: 24px !important; /* Increased number size */
+}
+
+.custom-archives {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.custom-archives h2 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.custom-archive-posts li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.custom-archive-posts li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.wp-block-post-title a {
+    font-size: 18px;
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.wp-block-post-title a:hover {
+    color: #00a0d2;
+    text-decoration: underline;
+}
+
+.wp-block-spacer {
+    display: none;
+}
