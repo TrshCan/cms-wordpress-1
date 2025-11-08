@@ -1,93 +1,82 @@
 .my-comments-block {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   font-family: "Inter", sans-serif;
+  max-width: fit-content;
+  margin-top: 0% !important;
 }
 
-/* Each comment row */
-.my-comment-row {
+/* Each comment card */
+.my-comment-card {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  background: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 14px 16px;
   animation: fadeIn 0.3s ease;
+  /* Right-align card within column flex container */
+  
 }
 
 /* Avatar */
+.my-comment-avatar {
+  flex-shrink: 0;
+}
+
 .my-comment-avatar img {
-  width: 48px;
-  height: 48px;
-  border-radius: 6px;
+  width: fit-content !important;
+  height: 40px;
+  border-radius: 2px;
   object-fit: cover;
-  background: #ccc;
+  background: #d0d0d0;
+  display: block;
 }
 
-/* Speech bubble */
-.my-comment-bubble {
-  position: relative;
-  background: #fff;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  padding: 10px 14px;
-  max-width: 85%;
+/* Comment content wrapper */
+.my-comment-content {
+  flex: 1;
+  min-width: 0;
 }
 
-/* Speech pointer */
-.my-comment-bubble::before {
-  content: "";
-  position: absolute;
-  left: -10px;
-  top: 18px;
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-right: 10px solid #fff;
-}
-.my-comment-bubble::after {
-  content: "";
-  position: absolute;
-  left: -11px;
-  top: 18px;
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-right: 11px solid #dcdcdc;
-}
-
-/* Author + text */
+/* Author name */
 .my-comment-author {
   font-weight: 600;
-  color: #222;
-  margin-bottom: 4px;
-  font-size: 15px;
-}
-.my-comment-text {
-  color: #444;
+  color: #4a4a4a;
+  margin-bottom: 10px;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
-/* Replies */
+/* Comment text */
+.my-comment-text {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.my-comment-text p {
+  margin: 0 0 8px 0;
+}
+
+.my-comment-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Replies container - nested indentation */
 .my-comment-replies {
-  margin-top: 12px;
-  margin-left: 60px;
+  margin-top: 16px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border-left: 2px solid #f1f1f1;
-  padding-left: 16px;
 }
 
 /* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* Light theme tweak for contrast */
-.my-comment-row:nth-child(even) .my-comment-bubble {
-  background: #fafafa;
 }

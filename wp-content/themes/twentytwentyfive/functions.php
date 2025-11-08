@@ -66,7 +66,7 @@ add_shortcode('latest_news_block', 'latest_news_block_shortcode');
 function my_post_comments_shortcode($atts) {
     global $post, $block;
 
-    $atts = shortcode_atts(['count' => 5], $atts, 'my_post_comments');
+    $atts = shortcode_atts(['count' => 1], $atts, 'my_post_comments');
 
     $post_id = $block->context['postId'] ?? $post->ID ?? null;
     if (!$post_id) return '';
@@ -114,9 +114,9 @@ function my_post_comments_shortcode($atts) {
         $content = wp_kses_post($comment->comment_content); // allow basic HTML if present
 
         ob_start(); ?>
-        <div class="my-comment-row" data-depth="<?php echo (int)$depth; ?>">
+        <div class="my-comment-card" data-depth="<?php echo (int)$depth; ?>">
             <div class="my-comment-avatar"><?php echo $avatar; ?></div>
-            <div class="my-comment-bubble">
+            <div class="my-comment-content">
                 <div class="my-comment-author"><?php echo $author; ?></div>
                 <div class="my-comment-text"><?php echo $content; ?></div>
             </div>
@@ -372,7 +372,7 @@ add_action('wp_head', function () { ?>
         .latepost-main .timeline-dot {
             position: absolute !important;
             left: -8px !important;
-            top: 6px !important;
+            top: 8px !important;
             transform: translateY(0) !important;
             /* fine-tune vertical alignment */
             width: 14px !important;
@@ -393,7 +393,7 @@ add_action('wp_head', function () { ?>
             justify-content: space-between !important;
             align-items: baseline !important;
             gap: 12px !important;
-            flex-wrap: wrap !important;
+            flex-wrap: nowrap !important;
         }
 
         .latepost-main .timeline-link {
@@ -401,6 +401,12 @@ add_action('wp_head', function () { ?>
             color: #2b6cb0;
             text-decoration: none;
             line-height: 1.4;
+            flex-shrink: 1;
+            min-width: 0;
+            max-width: 70%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .latepost-main .timeline-link:hover {
@@ -412,6 +418,7 @@ add_action('wp_head', function () { ?>
             font-size: 14px;
             color: #1a5fd8;
             white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .latepost-main .timeline-excerpt {
